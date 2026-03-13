@@ -90,5 +90,129 @@ namespace AppTeoria
         {
             MessageBox.Show("Opção: " + cbbOpcoes.Text);
         }
+
+        private void btnForIncremento_Click(object sender, EventArgs e)
+        {
+            //Laço de repetição FOR
+            //Executa um loop de um valor que sabemos
+            //a quantidade a ser executada
+
+            //Executar 11 vezes
+            for (int i = 0; i <= 10; i++)
+                //Cada execução, irei adicionar
+                //o valor de i, na listBox
+                //para isso iremos converter o inteiro em texto
+                lstLoop.Items.Add(i.ToString());
+        }
+
+        private void btnForDecremento_Click(object sender, EventArgs e)
+        {
+            //Teremos o mesmo principio do FOR
+            //Mas utilizando decremento
+
+            for(int i = 10; i >= 0; i--)
+                lstLoop.Items.Add(i.ToString());
+        }
+
+        private void btnWhile_Click(object sender, EventArgs e)
+        {
+            //Laço de repetição While
+            //Utilizado quando não sabemos a quantidade de
+            //repetições.
+            //Primeiro ocorre a validação para depois executar
+            //Ou seja se a primeira condição for satisfeita
+            //não executa nenhum vez
+
+            //Simular uma interação com o usuário
+            //Iremos sortear um número randomico
+            //para usar na validação do do-while
+
+            //Chamar o método Randomico
+            //criado uma varaivel sorteador
+            Random sorteador = new Random();
+
+            //Usando o método next para sortear o numero
+            //Iremos sortear um numero entre 1 e 10
+            int numeroSorteado = sorteador.Next(1, 10);
+
+            while(numeroSorteado != 8)
+            {
+                lstLoop.Items.Add(numeroSorteado.ToString());
+                numeroSorteado = sorteador.Next(1, 10);
+            }
+        }
+
+        private void btnDoWhile_Click(object sender, EventArgs e)
+        {
+            //Iremos aplicar o mesmo principio de sorteio do While
+
+            Random sorteador = new Random();
+
+            //Criamos e iniciamos a variavel numeroSorteado;
+            int numeroSorteado = 0;
+
+            do
+            {
+                //Sorteamos um numero
+                numeroSorteado = sorteador.Next(7, 9);
+                //Adicionamos o numero a ListBox
+                lstLoop.Items.Add(numeroSorteado.ToString());
+            }
+            //Valimos se o numéro sorteado é diferente de 8
+            while (numeroSorteado != 8);
+        }
+
+        private void btnSoNumero_Click(object sender, EventArgs e)
+        {
+            //Iremos utilizar laço de repetição
+            //para extrair somente os número de um conjunto
+            //de caracteres
+
+            //Para isso iremos validar caracter por caracter
+            //e salvar apenas os números
+
+            //Criar a variavel valor
+            //e vamos preenche-la com o valor digitado
+            //no textBox
+            string valor = txtValor.Text;
+
+            //Cria a variavel resultado
+            //para preencher com o resultado da extração
+            string resultado = "";
+
+            //Criar o laço para percorrer cada caracter
+            //Método Length retorna o tamanho de uma string 
+            for (int i = 0; i < valor.Length; i++)
+            {
+                //Iremos verificar se o caracter atual
+                //é um digito numerico
+                //char é o tipo de dados
+                //IsDigit é o método do tipo char
+                //que retorna um verdadeiro ou falso
+                //se o caracter é um digito numerico
+                //preciso pegar a posição do caracter
+                //na variavel valor de acordo com a posição
+                //do i
+                if (char.IsDigit(valor[i]))
+                    //vou incrementar os numeros validos
+                    //na variavel resultado
+                    //valor[i] é o caracter atual
+                    resultado += valor[i];
+            }
+
+            //Por ultimo iremos atribuir a variavel resultado
+            //ao textBox Resultado
+            txtResultado.Text = resultado;
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            //Iremos limpar os itens da ListBox
+            lstLoop.Items.Clear();
+            //Lendo de tras pra frente
+            //Limpar Itens ListBox
+            //Ou seja
+            //Limpas os itens da listBox
+        }
     }
 }
