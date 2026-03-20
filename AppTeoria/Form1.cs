@@ -214,5 +214,103 @@ namespace AppTeoria
             //Ou seja
             //Limpas os itens da listBox
         }
+
+        private void btnMetodo_Click(object sender, EventArgs e)
+        {
+            MetodoSomar();
+        }
+
+        //Método somar dois valores
+        //Não possui retorno, portanto 
+        //é do tipo VOID
+        void MetodoSomar()
+        {
+            //Este método, irá recuperar
+            //os valores informados pelo usuario
+            //converter os valores para int
+            //Somar os dois valores
+            //Exibir o resultado para o usuário
+
+            //Criar as variaveis nescessarias
+            int v1, v2, resultado;
+
+            //Iremos recuperar os valores do textBox
+            //Converter para int e atribuir a variavel
+
+            //Para converter um valor numerico
+            //é preciso informar o tipo de dados
+            //desejado e chamar a função Parse(Converter)
+            //e passar o valor a ser convertido em formato
+            //string
+            //Ou seja o parse converte apenas
+            //string em numero
+            //EX: int.Parse('1');
+            //o resultado da conversão é o numero int 1
+
+            v1 = int.Parse(txtValor1.Text);
+            v2 = int.Parse(txtValor2.Text);
+
+            //Agora iremos realizar a soma das variaveis
+            //v1 e v2 e armazenar o resultado na operação
+            //na variavel resultado
+
+            resultado = v1 + v2;
+
+            //Iremos exibir o conteudo de resultado
+            //no textBox, para isso preciso converter 
+            //resultado int em string
+            //utilizando á função ToString();
+
+            txtResultadoMF.Text = resultado.ToString();
+        }
+
+        private void btnFuncao_Click(object sender, EventArgs e)
+        {
+            //Alternativa 1
+            //Como estamos usando função
+            //é preciso preparar o terreno
+            //antes da chamada da função
+
+            //Seguindo o principio do metodoSomar
+            //vamos criar as variaveis
+            int v1, v2, resultado;
+
+            //Atribuir o valor informado
+            //as variaveis
+            v1 = StringParaInt(txtValor1.Text);
+            v2 = StringParaInt(txtValor2.Text);
+
+            //Iremos chamar a funcaoSomar
+            //e atribuir o resultado a variavel
+
+            resultado = FuncaoSomar(v1, v2);
+
+            //agora exibir o resultado
+
+            txtResultadoMF.Text = resultado.ToString();
+
+        }
+
+        //Iremos criar um função
+        //que ira apenas somar 2 valores
+        //e retornar o resultado da soma
+
+        int FuncaoSomar(int v1, int v2)
+        {
+            //A função irá executar um
+            //bloco de código e retornar
+            //um valor do mesmo tipo da função
+            //ou seja um função int
+            //só retorna um unico valor int
+
+            return v1 + v2;
+        }
+
+        //Criar um função para converter
+        //string em int
+        int StringParaInt(string valor)
+        {
+            return int.Parse(valor);
+        }
     }
 }
