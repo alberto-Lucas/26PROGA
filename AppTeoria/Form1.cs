@@ -277,6 +277,7 @@ namespace AppTeoria
 
             //Atribuir o valor informado
             //as variaveis
+            //v1 = int.Parse(txtValor1.Text)
             v1 = StringParaInt(txtValor1.Text);
             v2 = StringParaInt(txtValor2.Text);
 
@@ -310,7 +311,65 @@ namespace AppTeoria
         //string em int
         int StringParaInt(string valor)
         {
-            return int.Parse(valor);
+            //Convertendo diretamente
+            //Pode ocosarionar erros
+            //caso o valor informado não seja 
+            //um numero
+            //Exemplo conversão direta
+            //return int.Parse(valor);
+
+            //Nessesario realizar a validação
+            //e definir um numero padrão
+            //caso não seja possivel a versão
+
+            //Para isso iremos trocar o Parse
+            //pelo TryParse, onde ele ira
+            //retornar se a conversão foi possivel 
+            //ou não, caso possivel
+            //ja retorna o valor convertido
+
+            //Usaremos um if ternario para definir
+            //um valor padrão
+            //usaremos o valor padrão zero (0)
+
+            //Iremos tentar converter
+            //TryParse retorna um bool
+            //Se possivel retorna true e na variavel out
+            //retorna o resultado da conversao
+            //se não apenas retorna false
+            return
+                int.TryParse(valor, out int resultado) ?
+                resultado : //Se True
+                0; //Se False
+
+            //if ternario
+            // dividido em 3 partes
+            //condicao
+            //resultado true
+            //resultado false
+            //? significa if
+            //: significa else
+            //ou seja
+            //idade >= 18 ? "Pode beber" : "Não pode beber"
+            //mesma coisa que
+            //if(idade >= 18)
+            //  "Pode beber"
+            //else
+            //  "Não pode beber"
+        }
+
+        private void btnFuncaoAlt_Click(object sender, EventArgs e)
+        {
+            //Alternativa 2
+            //Realizar chamdas de função direto
+            //nos parametros
+            //iremos realizar o mesmo processo
+            //do btnFuncao, porém apenas em uma linha
+
+            txtResultadoMF.Text =
+                FuncaoSomar(
+                    StringParaInt(txtValor1.Text),
+                    StringParaInt(txtValor2.Text)).ToString();
         }
     }
 }

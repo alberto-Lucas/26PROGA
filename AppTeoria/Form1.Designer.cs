@@ -274,6 +274,7 @@
             this.btnFuncaoAlt.TabIndex = 23;
             this.btnFuncaoAlt.Text = "FUNÇÃO ALT";
             this.btnFuncaoAlt.UseVisualStyleBackColor = true;
+            this.btnFuncaoAlt.Click += new System.EventHandler(this.btnFuncaoAlt_Click);
             // 
             // Form1
             // 
