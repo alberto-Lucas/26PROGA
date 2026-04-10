@@ -194,5 +194,24 @@ namespace TabuadaRevisao
                 lstResultado.Items.Add("-------------");
             }//Fim do Loop I
         }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            //Valiamos se os valores inseridos são válidos
+            //Se não for ja encerremos a execução
+            if (!IsCamposValidos(txtNumInicial.Text, txtNumFinal.Text))
+                return; 
+            //Usamos um return vazio, poís método não possui retorno
+
+            //Com os valores validados
+            //podemos converte-los e os calcular
+            //Chamo o método que irá calcular e
+            //popular a listBox
+            //Iremos converter os valores diretamente
+            //nos parametos do método
+            CalcularTabuada(
+                int.Parse(txtNumInicial.Text), 
+                int.Parse(txtNumFinal.Text));
+        }
     }
 }
