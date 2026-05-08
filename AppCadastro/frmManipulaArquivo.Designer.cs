@@ -148,6 +148,7 @@
             this.btnGravar.TabIndex = 10;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // btnAdicionar
             // 
@@ -157,6 +158,7 @@
             this.btnAdicionar.TabIndex = 11;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnCarregar
             // 
@@ -167,6 +169,7 @@
             this.btnCarregar.TabIndex = 12;
             this.btnCarregar.Text = "Carregar";
             this.btnCarregar.UseVisualStyleBackColor = true;
+            this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
             // 
             // folderBrowserDialog1
             // 

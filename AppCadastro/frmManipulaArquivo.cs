@@ -112,5 +112,117 @@ namespace AppCadastro
                     "Erro original: " + ex.Message); //apresenta o erro cpturado pelo try
             }
         }
+
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+            //Seguir praticamente o mesmo processo do botão criar
+            //Montar o diretorio completo
+            //Validar se o arquivo existe
+            //Gravar o arquivo
+            //Usar o try catch
+            //A unica diferença é faremos tudo dentro do try catch
+            try
+            {
+                string dirCompleto =
+                    Path.Combine(txtDiretorio.Text, txtNomeArquivo.Text + ".txt");
+
+                //Durante a gravação é preciso que o arquivo 
+                //exista, neste caso iremos notificar o usuario
+                //se o arquivo não existir
+                if (!File.Exists(dirCompleto))
+                {
+                    MessageBox.Show("Arquivo não encontrado.");
+                    return; //aborta a execução
+                }
+
+                //Agora podemos realizar a gravação
+                //Todo o conteudo do arquivo será subistituido
+                File.WriteAllText(dirCompleto, txtTexto.Text);
+                MessageBox.Show("Dados gravados com sucesso!.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Ocorreu um erro ao gravar os dados no arquivo." + 
+                    Environment.NewLine +
+                    "Erro original: " + ex.Message);
+            }
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            //Qual a diferença entre o gravar e o adicionar?
+            //o Gravar ele sempre vai subistituir o conteudo atual do arquivo
+            //ocorrendo a perca de dados
+            //o adicinar irá literalemente adicionar o novo conteudo
+            //ao final do arquivo, sem ocorrer perca de dados
+
+            //Seguimos o mesmo padrão de uso do try e sua rotinas
+            try
+            {
+                string dirCompleto =
+                    Path.Combine(txtDiretorio.Text, 
+                                 txtNomeArquivo.Text + ".txt");
+
+                if(!File.Exists(dirCompleto))
+                {
+                    MessageBox.Show("Arquivo não encontrado.");
+                    return;
+                }
+
+                //Agora a principal diferença é
+                //Utilizar o AppendAllText no Lugar do WriteAllText
+                //OBS: O Appdend irá adicionar o conteudo em sequencia
+                //na mesma linha do ultimo dado inserido
+                //portanto é nescessario adicionar uma quebra de linha
+                //antes da adição do novo conteudo
+                File.AppendAllText(
+                    dirCompleto, Environment.NewLine + txtTexto.Text);
+                
+                MessageBox.Show(
+                    "Dados adicionados com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Ocorreu um erro ao adicionar os dados no arquivo."+
+                    Environment.NewLine + 
+                    "Erro original: " + ex.Message);
+            }
+        }
+
+        private void btnCarregar_Click(object sender, EventArgs e)
+        {
+            //Rotina para carregar o conteudo do arquivo
+            //Seguiremos um padrão parecido com o adicionar e o gravar
+            //Apenas trocando a gravação por leitura
+            try
+            {
+                string dirCompleto =
+                    Path.Combine(txtDiretorio.Text,
+                                 txtNomeArquivo.Text + ".txt");
+
+                if(!File.Exists(dirCompleto))
+                {
+                    MessageBox.Show("Arquivo não encontrado.");
+                    return;
+                }
+
+                //Agora sim podemos realizar a leitura
+                //ReadAllText método que realiza a leitura
+                //de todo conteudo do arquivo
+                string conteudo = File.ReadAllText(dirCompleto);
+                txtTextoArquivo.Text = conteudo;
+
+                MessageBox.Show("Arquivo carregado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Ocorreu um erro ao carregar o arquivo." +
+                    Environment.NewLine +
+                    "Erro original: " + ex.Message);
+            }
+        }
     }
 }
