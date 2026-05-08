@@ -37,19 +37,21 @@
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orçamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.versãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblHora = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblData = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.utilidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manipuladorDeArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,6 +63,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.movimentaçãoToolStripMenuItem,
+            this.utilidadesToolStripMenuItem,
             this.ajudaToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -105,22 +108,16 @@
             // vendaToolStripMenuItem
             // 
             this.vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vendaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.vendaToolStripMenuItem.Text = "Vendas";
             this.vendaToolStripMenuItem.Click += new System.EventHandler(this.vendaToolStripMenuItem_Click);
             // 
             // orçamentosToolStripMenuItem
             // 
             this.orçamentosToolStripMenuItem.Name = "orçamentosToolStripMenuItem";
-            this.orçamentosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orçamentosToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.orçamentosToolStripMenuItem.Text = "Orçamentos";
             this.orçamentosToolStripMenuItem.Click += new System.EventHandler(this.orçamentosToolStripMenuItem_Click);
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.sairToolStripMenuItem.Text = "Sair";
             // 
             // ajudaToolStripMenuItem
             // 
@@ -145,6 +142,12 @@
             this.suporteToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.suporteToolStripMenuItem.Text = "Suporte";
             // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
@@ -161,13 +164,18 @@
             this.panel1.Size = new System.Drawing.Size(419, 56);
             this.panel1.TabIndex = 1;
             // 
-            // panel2
+            // lblData
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(118, 8);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 40);
-            this.panel2.TabIndex = 3;
+            this.lblData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.Color.White;
+            this.lblData.Location = new System.Drawing.Point(244, 33);
+            this.lblData.Name = "lblData";
+            this.lblData.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblData.Size = new System.Drawing.Size(169, 25);
+            this.lblData.TabIndex = 6;
+            this.lblData.Text = "hora";
             // 
             // lblHora
             // 
@@ -182,24 +190,19 @@
             this.lblHora.TabIndex = 5;
             this.lblHora.Text = "hora";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel2.Location = new System.Drawing.Point(118, 8);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 40);
+            this.panel2.TabIndex = 3;
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lblData
-            // 
-            this.lblData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.ForeColor = System.Drawing.Color.White;
-            this.lblData.Location = new System.Drawing.Point(244, 33);
-            this.lblData.Name = "lblData";
-            this.lblData.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblData.Size = new System.Drawing.Size(169, 25);
-            this.lblData.TabIndex = 6;
-            this.lblData.Text = "hora";
             // 
             // button1
             // 
@@ -238,6 +241,21 @@
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
             this.pictureBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox2_MouseMove);
+            // 
+            // utilidadesToolStripMenuItem
+            // 
+            this.utilidadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manipuladorDeArquivoToolStripMenuItem});
+            this.utilidadesToolStripMenuItem.Name = "utilidadesToolStripMenuItem";
+            this.utilidadesToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.utilidadesToolStripMenuItem.Text = "Utilidades";
+            // 
+            // manipuladorDeArquivoToolStripMenuItem
+            // 
+            this.manipuladorDeArquivoToolStripMenuItem.Name = "manipuladorDeArquivoToolStripMenuItem";
+            this.manipuladorDeArquivoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.manipuladorDeArquivoToolStripMenuItem.Text = "Manipulador de Arquivo";
+            this.manipuladorDeArquivoToolStripMenuItem.Click += new System.EventHandler(this.manipuladorDeArquivoToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -283,6 +301,8 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripMenuItem utilidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manipuladorDeArquivoToolStripMenuItem;
     }
 }
 

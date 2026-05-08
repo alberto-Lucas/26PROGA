@@ -113,5 +113,20 @@ namespace AppCadastro
             frmMovimentacao movimentacao = new frmMovimentacao(0);
             movimentacao.ShowDialog();
         }
+
+        private void manipuladorDeArquivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //frmManipulaArquivo tela a ser aberta
+            //frm variavel que recebera a instancia da tela
+            //ou seja, será a propria tela desejada
+            //new frmManipulaArquivo() criada a instancia da tela
+            //desejada em memória (RAM), ou seja é o mesmo nome
+            //da tela adicionando os parenteses no final ()
+            //eles representam a chamada do contrutor 
+            //método responsavel por criar a tela em memória
+            //frm.Show(); irá realizar a exibição da tela
+            frmManipulaArquivo frm = new frmManipulaArquivo();
+            frm.Show();
+        }
     }
 }

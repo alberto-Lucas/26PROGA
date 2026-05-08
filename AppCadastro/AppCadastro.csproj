@@ -58,6 +58,12 @@
     <Compile Include="frmCadCliente.Designer.cs">
       <DependentUpon>frmCadCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManipulaArquivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManipulaArquivo.Designer.cs">
+      <DependentUpon>frmManipulaArquivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMovimentacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadCliente.resx">
       <DependentUpon>frmCadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManipulaArquivo.resx">
+      <DependentUpon>frmManipulaArquivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMovimentacao.resx">
       <DependentUpon>frmMovimentacao.cs</DependentUpon>
